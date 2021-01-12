@@ -2,19 +2,19 @@
 
 namespace Database\Factories;
 
-use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 
-class CategoryFactory extends Factory
+class ProductFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Category::class;
+    protected $model = Product::class;
 
     /**
      * Define the model's default state.
@@ -23,14 +23,13 @@ class CategoryFactory extends Factory
      */
     public function definition()
     {
-        $name = $this->faker->jobTitle;
-        $nameArr = explode(' ', $name);
-        $name = trim($nameArr[0]);
-
-
+        $productSuffix = ['Pants', 'Cloths', 'Glasses', 'Shoes', 'Food', 'Sweater'];
+        $name = $this->faker->company . ' ' . Arr::random($productSuffix);
         return [
             'name' => $name,
-            'slug' => Str::slug($name)
+            'slug' => Str::slug($name),
+            'description' => $this->faker->realText(320),
+            'price' => $this->faker->numberBetween(10000, 100000)
         ];
     }
 }

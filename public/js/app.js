@@ -4285,14 +4285,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   layout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__.default,
   props: {
-    products: {
-      type: Object,
-      "default": null
-    }
+    products: Object
   }
 });
 
@@ -34247,9 +34245,11 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container mx-auto pt-4" },
+    { staticClass: "container pt-4" },
     _vm._l(_vm.products.data, function(product) {
-      return _c("div", { key: product.id }, [_vm._v(_vm._s(product.name))])
+      return _c("div", { key: product.id }, [
+        _c("div", [_vm._v(_vm._s(product.name))])
+      ])
     }),
     0
   )

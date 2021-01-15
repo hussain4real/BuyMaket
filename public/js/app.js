@@ -34247,7 +34247,8 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    _vm._l(_vm.products, function(product) {
+    { staticClass: "container mx-auto pt-4" },
+    _vm._l(_vm.products.data, function(product) {
       return _c("div", { key: product.id }, [_vm._v(_vm._s(product.name))])
     }),
     0

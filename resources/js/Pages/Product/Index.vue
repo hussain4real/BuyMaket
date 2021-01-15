@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div v-for="product in products" :key="product.id">{{product.name}}</div>
+    <div class="container mx-auto pt-4">
+        <div v-for="product in products.data" :key="product.id">{{product.name}}</div>
     </div>
 
 </template>

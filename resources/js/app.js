@@ -6,10 +6,12 @@ import {
     App as InertiaApp,
     plugin as InertiaPlugin
 } from "@inertiajs/inertia-vue";
+import VueCompositionApi from "@vue/composition-api";
 import PortalVue from "portal-vue";
 import { InertiaProgress } from "@inertiajs/progress";
 
 Vue.mixin({ methods: { route } });
+Vue.use(VueCompositionApi);
 Vue.use(InertiaPlugin);
 Vue.use(PortalVue);
 
